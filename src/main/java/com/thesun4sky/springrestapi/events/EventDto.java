@@ -1,17 +1,16 @@
 package com.thesun4sky.springrestapi.events;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@Builder @AllArgsConstructor @NoArgsConstructor
-@Getter @Setter @EqualsAndHashCode(of = "id")
-@Entity
-public class Event {
+//Validation과 관련된 어노테이션과 조건을 관리하는 함수
+@Data @Builder @AllArgsConstructor @NoArgsConstructor
+public class EventDto {
 
-    @Id @GeneratedValue
-    private int id;
     private String name;
     private String description;
     private LocalDateTime beginEnrollmentDateTime;
@@ -21,11 +20,5 @@ public class Event {
     private String location; // (optional) 이게 없으면 온라인 모임
     private int basePrice; // (optional)
     private int maxPrice; // (optional) private int
-    private int limitOfEnrollment;
-    private boolean offline;
-    private boolean free;
-
-    @Enumerated(EnumType.STRING)
-    private EventStatus eventStatus = EventStatus.DRAFT;
 
 }

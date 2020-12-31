@@ -1,15 +1,12 @@
 package com.thesun4sky.springrestapi.events;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-
 import java.time.LocalDateTime;
+
 
 //Validation과 관련된 어노테이션과 조건을 관리하는 함수
 @Data @Builder @AllArgsConstructor @NoArgsConstructor
